@@ -1,8 +1,6 @@
 /*
  * 
- * Game: Main Class
- * 
- * Sets up a JFrame and renders the game loop inside of it.
+ * Game
  * 
  * Implements Runnable: the run() method starts the game loop
  * 
@@ -164,7 +162,7 @@ public class Game extends Canvas implements Runnable {
 	/*
 	 * start game as a thread
 	 * */
-	private synchronized void start() {
+	public synchronized void start() {
 		if (running) {
 			return;
 		} else {
@@ -372,30 +370,6 @@ public class Game extends Canvas implements Runnable {
 		
 		// stop program
 		stop();
-	}
-	
-	public static void main(String args[]) {
-		
-		// create game object
-		Game game = new Game();
-		
-		// configure canvas size
-		game.setPreferredSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
-		game.setMaximumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
-		game.setMinimumSize(new Dimension(WIDTH * SCALE, HEIGHT * SCALE));
-		
-		// configure JFrame
-		JFrame frame = new JFrame(game.TITLE);
-		frame.add(game); 										// add a canvas to the JFrame
-		frame.pack();    										// extends from 'Window' class. Formats things on resizing..
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.setLocationRelativeTo(null);
-		frame.setVisible(true);
-		frame.setResizable(false);
-		
-		// start game as thread
-		game.start();
-				
 	}
 	
 }
