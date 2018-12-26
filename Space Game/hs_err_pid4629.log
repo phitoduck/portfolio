@@ -1,0 +1,31 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00000001053d4430, pid=4629, tid=14599
+#
+# JRE version: Java(TM) SE Runtime Environment (11.0.1+13) (build 11.0.1+13-LTS)
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (11.0.1+13-LTS, mixed mode, tiered, compressed oops, g1 gc, bsd-amd64)
+# Problematic frame:
+# C  [libjimage.dylib+0x2430]  ImageFileReader::find_location_index(char const*, unsigned long long*) const+0x2c
+#
+# No core dump will be written. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -agentlib:jdwp=transport=dt_socket,suspend=y,address=localhost:52781 -javaagent:/Users/eric/eclipse/java-2018-12/Eclipse.app/Contents/Eclipse/configuration/org.eclipse.osgi/215/0/.cp/lib/javaagent-shaded.jar -Dfile.encoding=UTF-8 --module-path=/Users/eric/eclipse-workspace/Space Game/bin -Djdk.module.main=spacegame spacegame/com.game.src.main.Game
+
+Host: MacBookPro11,3 x86_64 2300 MHz, 8 cores, 16G, Darwin 17.5.0
+Time: Mon Dec 24 22:05:36 2018 PST elapsed time: 52 seconds (0d 0h 0m 52s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007febe3824800):  JavaThread "Signal Dispatcher" daemon [_thread_in_vm, id=14599, stack(0x000070000b4d3000,0x000070000b5d3000)]
+
+Stack: [0x000070000b4d3000,0x000070000b5d3000],  sp=0x000070000b5d12b0,  free space=1016k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libjimage.dylib+0x2430]  ImageFileReader::find_location_index(char const*, unsigned long long*) const+0x2c
+C  [libjimage.dylib+0x2784]  JIMAGE_FindResource+0xcf
