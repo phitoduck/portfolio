@@ -31,6 +31,7 @@ public class Game extends Canvas implements Runnable {
 	public static final int WIDTH = 320;
 	public static final int HEIGHT = WIDTH / 12 * 9;
 	public static final int SCALE = 2;
+	public static final int OBJECT_SIZE = 32;
 	
 	// JFrame title
 	public final String TITLE = "2D Space Game";
@@ -53,7 +54,7 @@ public class Game extends Canvas implements Runnable {
 		MENU,
 		GAME,
 		END
-	};
+	}; 
 	
 	private STATE state = STATE.MENU;
 	
@@ -69,14 +70,9 @@ public class Game extends Canvas implements Runnable {
 	public static final int PLAYER_MAX_HEALTH = 4;
 	private boolean isShooting = false;
 	
-	// in game entities
-	private ArrayList<EntityFriendly> friendlyEntities;
-	private ArrayList<EntityEnemy> enemyEntities;
-	
+	// for drawing entities
 	private Graphics g;
 	private BufferStrategy bs;
-	
-	public static final int OBJECT_SIZE = 32;
 	
 	// manages non-player entities (Bullets, etc.)
 	private Controller controller;
@@ -125,13 +121,6 @@ public class Game extends Canvas implements Runnable {
 		return isOnScreen(x, y);
 	}
 	
-	public ArrayList<EntityFriendly> getFriendlyEntities() {
-		return this.friendlyEntities;
-	}
-	
-	public ArrayList<EntityEnemy> getEnemyEntities() {
-		return this.getEnemyEntities();
-	}
 	
 	public void setState(STATE state) {
 		this.state = state;
@@ -149,7 +138,7 @@ public class Game extends Canvas implements Runnable {
 	
 	
 	// initializes game variables
-	public void init() {
+	private void init() {
 		
 		// from Canvas: no need to click on the window to play
 		this.requestFocus();
@@ -204,7 +193,7 @@ public class Game extends Canvas implements Runnable {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-		
+	
 		// halt process
 		System.exit(1);
 	}

@@ -220,7 +220,7 @@ public class Controller {
 		}
 	}
 	
-	public ArrayList<EntityFriendly> getFriendlyEnemies() {
+	public ArrayList<EntityFriendly> getFriendlyEntities() {
 		return friends;
 	}
 	
