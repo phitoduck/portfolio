@@ -7,7 +7,7 @@
     <ul>
         <li>Space Game
            <br>
-           <p>Inside of `Space Game` there are class and UML diagrams.<p>
+           <p>Inside of <code>Space Game<code> there are class and UML diagrams.<p>
       </li>
     </ul>
 </div>
